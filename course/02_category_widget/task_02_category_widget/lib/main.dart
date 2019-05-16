@@ -12,7 +12,7 @@ import 'package:task_02_category_widget/category.dart';
 
 // TODO: Pass this information into your custom [Category] widget
 const _categoryName = 'Cake';
-const _categoryIcon = Icons.cake;
+const _categoryIcon = Icons.terrain;
 const _categoryColor = Colors.green;
 
 /// The function that is called when main.dart is run.
@@ -32,7 +32,11 @@ class UnitConverterApp extends StatelessWidget {
         backgroundColor: Colors.green[100],
         body: Center(
           // TODO: Determine what properties you'll need to pass into the widget
-          child: Category(),
+          child: Category(
+            name: _categoryName,
+            iconLocation: _categoryIcon,
+            color: _categoryColor,
+          ),
         ),
       ),
     );
