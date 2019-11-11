@@ -7,33 +7,24 @@
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
-/// A custom [Category] widget.
-
 final _rowHeight = 100.0;
-final _borderRadius = BorderRadius.circular(_rowHeight / 2);//
+final BorderRadius _borderRadius = BorderRadius.circular(_rowHeight / 2);
+final iconSize = 60.0;
+final iconSizeColored = 70.0;
+final textSize = 24.0;
+
 /// The widget is composed on an [Icon] and [Text]. Tapping on the widget shows
 /// a colored [InkWell] animation.
 class Category extends StatelessWidget {
+  final iconName, color, name;
 
   /// Creates a [Category].
   ///
   /// A [Category] saves the name of the Category (e.g. 'Length'), its color for
   /// the UI, and the icon that represents it (e.g. a ruler).
   // TODO: You'll need the name, color, and iconLocation from main.dart
-  final String name;
-  final ColorSwatch color;
-  final IconData iconLocation;
-
-  const Category({
-    Key key,
-    @required this.name,
-    @required this.color,
-    @required this.iconLocation,
-  })
-      : assert(name != null),
-        assert(color != null),
-        assert(iconLocation != null),
-        super(key: key);
+  const Category({Key key,
+      @required this.iconName, @required this.color, @required this.name});
 
   /// Builds a custom widget that shows [Category] information.
   ///
@@ -62,7 +53,7 @@ class Category extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.all(16.0),
                   child: Icon(
-                    iconLocation,
+                    iconName,
                     size: 60.0,
                     color: Colors.pink,
                   ),
@@ -77,7 +68,6 @@ class Category extends StatelessWidget {
               ],
             ),
           ),
-
         ),
       ),
     );
